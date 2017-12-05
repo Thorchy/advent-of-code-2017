@@ -1,7 +1,6 @@
 from math import sqrt
 
 PUZZLE_INPUT = 277678
-BASE_VALUE = 1
 
 
 def coord(number):
@@ -18,10 +17,30 @@ def coord(number):
     ][group]
 
 
-def find_distance(first, second):
-    x1, y1 = coord(first)
-    x2, y2 = coord(second)
+def find_distance(value, base_value=1):
+    x1, y1 = coord(base_value)
+    x2, y2 = coord(value)
     return abs(x2 - x1) + abs(y2 - y1)
 
 
-print find_distance(BASE_VALUE, PUZZLE_INPUT)
+def main():
+    print "Day 3, Half 1: {}".format(find_distance(PUZZLE_INPUT))
+
+
+def test_spiral_case_1():
+    assert find_distance(1) == 0
+
+
+def test_spiral_case_2():
+    assert find_distance(12) == 3
+
+
+def test_spiral_case_3():
+    assert find_distance(23) == 2
+
+
+def test_spiral_case_4():
+    assert find_distance(1024) == 31
+
+if __name__ == '__main__':
+    main()
