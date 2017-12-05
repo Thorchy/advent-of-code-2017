@@ -1,3 +1,6 @@
+import os
+
+
 def parse_input(filepath):
     with open(filepath) as f:
         captcha = list(f.read().strip())
@@ -21,7 +24,7 @@ def solve_captcha(captcha, steps=1):
 
 
 def main():
-    captcha = parse_input('input.txt')
+    captcha = parse_input(os.path.join(os.path.dirname(__file__), 'input.txt'))
     print "Day 1, Part 1: {}".format(solve_captcha(captcha))
     print "Day 1, Part 2: {}".format(solve_captcha(captcha, len(captcha) / 2))
 

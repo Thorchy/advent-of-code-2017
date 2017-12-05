@@ -25,6 +25,7 @@ def find_distance(value, base_value=1):
 
 def main():
     print "Day 3, Half 1: {}".format(find_distance(PUZZLE_INPUT))
+    print "Day 3, Half 2: {}".format('Not Yet Implemented')
 
 
 def test_spiral_case_1():
